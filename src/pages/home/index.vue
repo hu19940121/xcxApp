@@ -18,12 +18,11 @@
 	    this.getData()
 	  },
 	  methods: {
-	    getData () {
-	      this.http(this.apis.getChannelList, {}).then(res => {
-	        this.channelList = res.data.data
-	      })
-	    }
-	  }
+    async getData () {
+      let res = await this.http(this.apis.getChannelList, {})
+      this.channelList = res.data.data
+    }
+  }
 	}
 </script>
 
