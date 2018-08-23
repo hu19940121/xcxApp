@@ -13,7 +13,6 @@
         <card :text="motto"></card>
       </div>
     </div>
-
     <form class="form-container">
       <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
@@ -55,7 +54,6 @@ export default {
       })
     },
     clickHandle (msg, ev) {
-      console.log('clickHandle:', msg, ev)
     }
   },
 
