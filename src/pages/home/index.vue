@@ -16,6 +16,7 @@ export default {
   },
   created () {
     this.getData()
+    this.getUserInfo()
   },
   methods: {
     async getData () {
