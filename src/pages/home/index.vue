@@ -8,22 +8,22 @@
 </template>
 
 <script>
-	export default {
-	  data () {
-	    return {
-	      channelList: []
-	    }
-	  },
-	  created () {
-	    this.getData()
-	  },
-	  methods: {
+export default {
+  data () {
+    return {
+      channelList: []
+    }
+  },
+  created () {
+    this.getData()
+  },
+  methods: {
     async getData () {
       let res = await this.http(this.apis.getChannelList, {})
       this.channelList = res.data.data
     }
   }
-	}
+}
 </script>
 
 <style scoped>
