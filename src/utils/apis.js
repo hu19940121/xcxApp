@@ -7,6 +7,6 @@ export const apis = {
   },
   xcxLogin: {
     url: domain + '/api/v2/xcxLogin/login',
-    method: 'get'
+    method: 'post'
   }
 }
