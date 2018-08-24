@@ -4,5 +4,9 @@ export const apis = {
   getChannelList: {
     url: domain + '/api/v2/channel/channelList',
     method: 'get'
+  },
+  xcxLogin: {
+    url: domain + '/api/v2/xcxLogin/login',
+    method: 'get'
   }
 }
