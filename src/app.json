@@ -3,6 +3,7 @@
     "pages/home/main",
     "pages/my/main",
     "pages/shortVideo/main",
+    "pages/videoPlay/main",
     "pages/index/main",
     "pages/logs/main",
     "pages/counter/main"

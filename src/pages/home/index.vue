@@ -19,31 +19,52 @@
     </div>
     <div class="tab_body_container">
       <div class="tab_body" v-for="(item,index) in channelList" :key="index" v-show="currentIndex==index">
-        {{item.name}}
+        <swiper :list="swiperList"></swiper>
+        <videoList :list="item" v-for="(item,index2) in videoList" :key="index2"/>
       </div>
     </div>
 	</div>
 </template>
 
 <script>
+import swiper from '@/components/swiper'
+import videoList from '@/components/videoList'
 export default {
   data () {
     return {
       channelList: [ ],
-      currentIndex: 0
+      currentIndex: 0,
+      swiperList: [],
+      videoList: []
     }
   },
   created () {
-    this.getData()
+    this.getChannelList() // 获取频道列表
   },
   methods: {
-    async getData () {
+    async getChannelList () { // 获取频道列表
       let res = await this.http(this.apis.getChannelList, {})
       this.channelList = res.data.data
+      this.getChannelContentById(this.channelList[this.currentIndex].id)
     },
-    handleClick (index) {
+    getChannelContentById (id) { // 根据频道id获取频道下的详情内容
+      this.http(this.apis.getChannelContentById, {id}).then(res => {
+        console.log(res)
+
+        this.swiperList = res.data.data.swiperList
+        this.videoList = res.data.data.videoList
+      })
+    },
+    handleClick (index = 0) { // 点击切换频道
       this.currentIndex = index
+      // console.log(this.channelList[index].id)
+
+      this.getChannelContentById(this.channelList[index].id)
     }
+  },
+  components: {
+    swiper,
+    videoList
   }
 }
 </script>
@@ -55,9 +76,10 @@ export default {
       top 0
       width 100%;
       height 170rpx
-      border 1px solid red
+      z-index 999
       .tab
-        height 100rpx        
+        height 100rpx
+        background-color #fff        
         .nav_item
           display inline-block
           height 100rpx
@@ -69,6 +91,7 @@ export default {
             border-bottom 6rpx solid #1296db
       .search_content
         display flex
+        background-color #fff
         input 
           width 480rpx;
           height 60rpx;
