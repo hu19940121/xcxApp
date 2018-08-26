@@ -1,3 +1,5 @@
+
+
 <template>
   <div class="videoItem" @click="linkToPlay(video)">
     <div class="poster">
@@ -38,15 +40,15 @@
 
 <style lang="stylus" scoped>
   .videoItem
-    width 340rpx;
-    height 280rpx
-    margin-left 26rpx
+    width 204rpx;
+    height 336rpx
+    margin-left 34rpx
     margin-bottom 20rpx
     float left
     .poster
       position relative
       width 100%;
-      height 200rpx
+      height 264rpx
       img
         height 100%;
         width 100%;

@@ -62,6 +62,14 @@ export default {
       this.getChannelContentById(this.channelList[index].id)
     }
   },
+  async  onPullDownRefresh () {
+  // to doing..
+  // 停止下拉刷新
+    console.log('sss')
+
+    wx.stopPullDownRefresh()
+  },
+
   components: {
     swiper,
     videoList

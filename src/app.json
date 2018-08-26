@@ -13,6 +13,7 @@
     "navigationBarBackgroundColor": "#1296db",
     "navigationBarTitleText": "观影小程序",
     "navigationBarTextStyle": "#fff"
+    
   },
   "tabBar": {
     "position":"bottom",

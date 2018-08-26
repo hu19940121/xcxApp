@@ -4,13 +4,21 @@
       <span>{{list.cate_name}} </span>
     </div>
     <div class="listContent">
-      <videoItem v-for="(video,index) in list.list"  :key="index" :video="video" />
+      <block v-if="list.layout===1">
+        <videoItem2  v-for="(video,index) in list.list"  :key="index" :video="video" /> 
+      </block>
+      <block v-else>
+        <videoItem  v-for="(video,index) in list.list"  :key="index" :video="video" />
+      </block>
+
     </div>
   </div>
 </template>
 
 <script>
   import videoItem from './videoItem'
+  import videoItem2 from './videoItem2'
+
   export default {
     props: ['list'],
     data () {
@@ -24,7 +32,8 @@
     },
 
     components: {
-      videoItem
+      videoItem, // 第一种布局 一行两列
+      videoItem2 // 第二种布局 一行三列
     }
   }
 </script>

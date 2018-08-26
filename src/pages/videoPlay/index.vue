@@ -1,7 +1,12 @@
 <template>
   <div class="videoPlay">
     <div class="playerBox">
-      <video :src="videoInfo.video_url"></video>
+      <block v-if="videoInfo.video_url!==''">
+         <video :src="videoInfo.video_url"></video>
+      </block>
+      <div v-else>
+        暂无视频资源 请联系管理员
+      </div>
     </div>
   </div>
 </template>
