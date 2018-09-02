@@ -1,5 +1,5 @@
-// let domain = 'http://127.0.0.1:8083'
-let domain = 'http://kaier2.free.idcfengye.com'
+let domain = 'http://192.168.1.105:8083'
+// let domain = 'http://kaier2.free.idcfengye.com'
 
 export const apis = {
   getChannelList: {
